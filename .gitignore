@@ -1,6 +1,7 @@
 .mypy_cache
 .pytest_cache
 .ipynb_checkpoints
+.DS_Store
 
 __pycache__
 *.py[co]
