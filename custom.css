@@ -311,8 +311,12 @@ body {
   border-top-color: #0000f1; }
 
 .reveal .controls {
-  top: 0px;
-  right: 0px;
+  top: 5px;
+  right: 5px;
+  height: 105px;
+  width: 105px;
+  bottom: auto;
+  left: auto;
 }
 
 /*********************************************
