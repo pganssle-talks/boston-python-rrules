@@ -1,0 +1,7 @@
+ruamel.yaml
+jupyter
+python-dateutil
+click
+pandas
+qrcode
+Pillow
