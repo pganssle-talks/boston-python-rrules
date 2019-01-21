@@ -219,28 +219,6 @@ var update_scroll = function(event){
 
 Reveal.addEventListener('slidechanged', update_scroll);
 
-// Add callback to toggle bold on an element as part of a fragment transition
-function togglebold(shown) {
-    function inner(event) {
-        event.fragments.forEach(fragment => {
-            if (!fragment.classList.contains('togglebold')) {
-                return;
-            } else {
-                if (shown) {
-                    fragment.style.fontWeight = 'bold';
-                } else {
-                    fragment.style.fontWeight = 'normal';
-                }
-            }
-        });
-    }
-    return inner;
-}
-
-/* Reveal.addEventListener('fragmentshown', togglebold(true)); */
-/* Reveal.addEventListener('fragmenthidden', togglebold(false)); */
-
-
 </script>
 
 </body>
