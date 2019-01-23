@@ -178,9 +178,9 @@ a.anchor-link {
 {{ super() }}
 </div>
 <div class="footer">
-<span id="website">https://ganssle.io</span>
-<span id="twitter">@pganssle</span>
 <span id="logo"><img src='images/zero-gray.svg'></span>
+<span id="twitter">@pganssle</span>
+<span id="website">https://ganssle.io</span>
 </div>
 <div class="footer">
 </div>
