@@ -13195,25 +13195,31 @@ a.anchor-link {
 <br/><br/>
 <div style="text-align: center; font-size: 20px">
 <i><a href="https://github.com/dateutil/dateutil">dateutil on Github</a></i></br>
-<i><a href="https://github.com/pganssle/tdp-2018-dateutil-talk">Github repo for this talk</a></i>
+<i><a href="https://github.com/pganssle-talks/boston-python-rrules">Github repo for this talk: pganssle-talks/boston-python-rrules</a></i>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Recurring-events">Recurring events<a class="anchor-link" href="#Recurring-events">&#182;</a></h1>
+<h1 id="dateutil.rrule"><code>dateutil.rrule</code><a class="anchor-link" href="#dateutil.rrule">&#182;</a></h1><p><code>rrule</code> is an implementation of <em>recurrence rules</em>.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://tools.ietf.org/html/rfc5545">RFC 5545</a>: "Internet Calendaring and Scheduling Core Object Specification"</p>
 <ul>
-<li>Check for updates at 23:00 every night</li>
-<li>Pay bills on the first of the month</li>
-<li>Meeting at noon on Mondays</li>
-<li>Schedule releases on Tuesdays and Thursdays</li>
-<li>School Monday to Friday between September and July</li>
+<li>Replaced <a href="https://tools.ietf.org/html/rfc2445">RFC 2445</a> in Sept. 2009</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/RFC5545-toc.png" alt="Top level ToC for RFC 5545, illustrating that it&#39;s 170 pages!"></p>
 
 </div>
 </div>
@@ -13232,7 +13238,7 @@ a.anchor-link {
 <div style="flex-grow: 1; order: -1;">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rr</span> <span class="o">=</span> <span class="n">rrule</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="n">YEARLY</span><span class="p">,</span> <span class="n">bymonth</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">bymonthday</span><span class="o">=</span><span class="mi">28</span><span class="p">,</span>  <span class="c1"># June 6 every year</span>
@@ -13273,7 +13279,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rr</span> <span class="o">=</span> <span class="n">rr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">byweekday</span><span class="o">=</span><span class="n">MO</span><span class="p">)</span>
@@ -13313,7 +13319,7 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rr</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1955</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
@@ -13330,7 +13336,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[65]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13344,86 +13350,7 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="iCalendar-Spec">iCalendar Spec<a class="anchor-link" href="#iCalendar-Spec">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://tools.ietf.org/html/rfc5545">RFC 5545</a>: "Internet Calendaring and Scheduling Core Object Specification"</p>
-<ul>
-<li>Replaced <a href="https://tools.ietf.org/html/rfc2445">RFC 2445</a> in Sept. 2009</li>
-</ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="images/RFC5545-toc.png" alt="Top level ToC for RFC 5545, illustrating that it&#39;s 170 pages!"></p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="VEVENT">VEVENT<a class="anchor-link" href="#VEVENT">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<pre>
-BEGIN:VEVENT
-UID:20190105T130000Z-paul@example.pizza
-DTSTAMP:20190105T130000Z
-<span class="togglebold fragment">DTSTART:20190207T170000Z</span>
-<span class="togglebold fragment">DTEND:20190207T180000Z</span>
-SUMMARY:Python Guild Meeting
-END:VEVENT
-</pre>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<pre>
-BEGIN:VEVENT
-UID:20190105T130000Z-paul@example.pizza
-DTSTAMP:20190105T130000Z
-DTSTART:20190207T170000Z
-<span class="togglebold fragment">RRULE:FREQ=WEEKLY;INTERVAL=2;COUNT=10</span>
-SUMMARY:Python Guild Meeting
-END:VEVENT
-</pre>
-</div>
-</div>
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="dateutil.rrule"><code>dateutil.rrule</code><a class="anchor-link" href="#dateutil.rrule">&#182;</a></h1><p><code>rrule</code> is an implementation of <em>recurrence rules</em> as laid out in the iCalendar RFC (RFC 5545).</p>
-<p>Recurrence rules are rules for generating dates and times at some (potentially complex) interval.</p>
-<p>Handles:</p>
-<ul>
-<li><code>rrule</code>: Python object representing a recurrence</li>
-<li><code>rrulestr</code>: Parse an RRULE string into an <code>rrule</code></li>
-<li><code>rruleset</code>: More complicated recurrences</li>
-</ul>
-<p>Doesn't handle <code>VEVENT</code> or other parts of the iCalendar spec</p>
-
-</div>
-</div>
-</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13439,7 +13366,7 @@ END:VEVENT
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">hourly</span> <span class="o">=</span> <span class="n">rrule</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="n">HOURLY</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>  <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -13496,7 +13423,7 @@ END:VEVENT
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Base is DAILY, but by restricted to Tuesdays in November</span>
@@ -13514,7 +13441,7 @@ END:VEVENT
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13545,7 +13472,7 @@ END:VEVENT
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">rrule</span><span class="p">(</span><span class="n">MONTHLY</span><span class="p">,</span> <span class="n">bymonthday</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
@@ -13562,7 +13489,7 @@ END:VEVENT
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -13603,7 +13530,7 @@ END:VEVENT
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The next 2 instances where the 4th of July falls on a Friday</span>
@@ -13621,7 +13548,7 @@ END:VEVENT
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13648,7 +13575,7 @@ END:VEVENT
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The Friday the 13ths before January 1st, 2018</span>
@@ -13666,7 +13593,7 @@ END:VEVENT
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -13701,7 +13628,7 @@ END:VEVENT
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rr</span> <span class="o">=</span> <span class="n">rrule</span><span class="p">(</span><span class="n">DAILY</span><span class="p">,</span> <span class="n">byhour</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">byweekday</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dtstart</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -13719,13 +13646,13 @@ END:VEVENT
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>datetime.datetime(2019, 1, 22, 9, 0)</pre>
+<pre>datetime.datetime(2019, 1, 24, 9, 0)</pre>
 </div>
 
 </div>
@@ -13744,7 +13671,7 @@ END:VEVENT
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rr</span><span class="o">.</span><span class="n">before</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>   <span class="c1"># Apparently this is a Saturday</span>
@@ -13760,7 +13687,7 @@ END:VEVENT
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13785,7 +13712,7 @@ END:VEVENT
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># byeaster is a non-standard extension in dateutil that calculates a day</span>
@@ -13805,7 +13732,7 @@ END:VEVENT
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -13833,7 +13760,7 @@ END:VEVENT
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rr</span> <span class="o">=</span> <span class="n">rrule</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="n">MONTHLY</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">bymonthday</span><span class="o">=</span><span class="mi">31</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -13884,77 +13811,6 @@ part of the recurrence set.</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Relativedelta">Relativedelta<a class="anchor-link" href="#Relativedelta">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="k">import</span> <span class="n">relativedelta</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">end_of_month</span><span class="p">(</span><span class="n">dtstart</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">delta</span> <span class="o">=</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">31</span><span class="p">)</span>
-    <span class="n">dt</span> <span class="o">=</span> <span class="n">dtstart</span> <span class="o">+</span> <span class="n">delta</span>    <span class="c1"># Start with the end of the first month</span>
-    
-    <span class="n">delta</span> <span class="o">=</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">31</span><span class="p">)</span>  <span class="c1"># &quot;End of next month&quot;</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">dt</span>
-        <span class="n">dt</span> <span class="o">+=</span> <span class="n">delta</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_rr_elems</span><span class="p">(</span><span class="n">end_of_month</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2018-01-31 00:00:00, 2018-02-28 00:00:00, 2018-03-31 00:00:00, 2018-04-30 00:00:00, ...
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="SKIP-option">SKIP option<a class="anchor-link" href="#SKIP-option">&#182;</a></h2>
 </div>
 </div>
@@ -13976,9 +13832,11 @@ part of the recurrence set.</code></pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>DTSTART:20141231T000000\n
-RRULE:FREQ=MONTHLY;COUNT=4;RSCALE=GREGORIAN;SKIP=BACKWARD</code></pre>
+<h3 id="Example:">Example:<a class="anchor-link" href="#Example:">&#182;</a></h3><p><pre style="font-size: 30px">
+DTSTART:20141231T000000
+RRULE:FREQ=MONTHLY;COUNT=4;RSCALE=GREGORIAN;SKIP=BACKWARD
+</pre>
+<br/></p>
 <p>Generates: 2014-12-31, 2015-01-31, 2015-02-28, 2015-03-31</p>
 
 </div>
@@ -13991,134 +13849,6 @@ RRULE:FREQ=MONTHLY;COUNT=4;RSCALE=GREGORIAN;SKIP=BACKWARD</code></pre>
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="rrulestr"><code>rrulestr</code><a class="anchor-link" href="#rrulestr">&#182;</a></h2><p>The iCalendar spec originally refers to a specific string format for specifying recurrence rules.</p>
-<p><code>rrule</code>s can also be generated from these string using the <code>rrulestr</code> class:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># DST start and stop transition rules for Pacific Time</span>
-<span class="n">dst_start</span> <span class="o">=</span> <span class="n">rrulestr</span><span class="p">(</span><span class="s1">&#39;DTSTART:19671029T020000;</span><span class="se">\n</span><span class="s1">&#39;</span>
-                     <span class="s1">&#39;FREQ=YEARLY;BYDAY=1SU;BYMONTH=4&#39;</span><span class="p">)</span>
-<span class="n">dst_end</span> <span class="o">=</span> <span class="n">rrulestr</span><span class="p">(</span><span class="s1">&#39;DTSTART:19671029T020000;</span><span class="se">\n</span><span class="s1">&#39;</span>
-                   <span class="s1">&#39;FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10&#39;</span><span class="p">)</span>
-<span class="n">rrset</span> <span class="o">=</span> <span class="n">rruleset</span><span class="p">()</span>
-<span class="n">rrset</span><span class="o">.</span><span class="n">rrule</span><span class="p">(</span><span class="n">dst_start</span><span class="p">)</span>
-<span class="n">rrset</span><span class="o">.</span><span class="n">rrule</span><span class="p">(</span><span class="n">dst_end</span><span class="p">)</span>
-
-<span class="n">rrset</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[datetime.datetime(2016, 4, 3, 2, 0),
- datetime.datetime(2016, 10, 30, 2, 0),
- datetime.datetime(2017, 4, 2, 2, 0),
- datetime.datetime(2017, 10, 29, 2, 0)]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="str(rrule)"><code>str(rrule)</code><a class="anchor-link" href="#str(rrule)">&#182;</a></h3><p>You can generate <code>RRULE</code> strings from <code>rrule</code> objects as well:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This string should be compatible with other applications using the iCalendar spec</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rrule</span><span class="p">(</span><span class="n">YEARLY</span><span class="p">,</span> <span class="n">byyearday</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">byhour</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">dtstart</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">)))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>DTSTART:20140913T000000
-RRULE:FREQ=YEARLY;BYYEARDAY=180;BYHOUR=1,4,12
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Note that the BYEASTER directive is the only RFC-incompatible output</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rrule</span><span class="p">(</span><span class="n">YEARLY</span><span class="p">,</span> <span class="n">byeaster</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">count</span><span class="o">=</span><span class="mi">14</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>DTSTART:19900101T000000
-RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14151,7 +13881,7 @@ RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dtstart</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># The base date</span>
@@ -14166,7 +13896,7 @@ RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># During the week, it comes every hour on the 37 from 6:37AM to 10:37PM...</span>
@@ -14182,7 +13912,7 @@ RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ..except after 6, when it comes every other hour - so exclude 7:37PM and 9:37PM!</span>
@@ -14197,7 +13927,7 @@ RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
 </div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># During the weekend, it comes every hour on the :07, from 8AM to 7PM</span>
@@ -14220,7 +13950,7 @@ RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># But on November 8th, 2016, politicians have arranged for busses to undergo</span>
@@ -14237,7 +13967,7 @@ RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># And in its place they&#39;ve added one bus at 4:32 AM</span>
@@ -14261,7 +13991,7 @@ RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bus_list</span> <span class="o">=</span> <span class="n">bus_schedule</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
@@ -14279,7 +14009,7 @@ RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -14508,12 +14238,140 @@ RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
                  style="border: 0px; box-shadow: none">
         </div>
     </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="rrulestr"><code>rrulestr</code><a class="anchor-link" href="#rrulestr">&#182;</a></h2><p>The iCalendar spec originally refers to a specific string format for specifying recurrence rules.</p>
+<p><code>rrule</code>s can also be generated from these string using the <code>rrulestr</code> class:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># DST start and stop transition rules for Pacific Time</span>
+<span class="n">dst_start</span> <span class="o">=</span> <span class="n">rrulestr</span><span class="p">(</span><span class="s1">&#39;DTSTART:19671029T020000;</span><span class="se">\n</span><span class="s1">&#39;</span>
+                     <span class="s1">&#39;FREQ=YEARLY;BYDAY=1SU;BYMONTH=4&#39;</span><span class="p">)</span>
+<span class="n">dst_end</span> <span class="o">=</span> <span class="n">rrulestr</span><span class="p">(</span><span class="s1">&#39;DTSTART:19671029T020000;</span><span class="se">\n</span><span class="s1">&#39;</span>
+                   <span class="s1">&#39;FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10&#39;</span><span class="p">)</span>
+<span class="n">rrset</span> <span class="o">=</span> <span class="n">rruleset</span><span class="p">()</span>
+<span class="n">rrset</span><span class="o">.</span><span class="n">rrule</span><span class="p">(</span><span class="n">dst_start</span><span class="p">)</span>
+<span class="n">rrset</span><span class="o">.</span><span class="n">rrule</span><span class="p">(</span><span class="n">dst_end</span><span class="p">)</span>
+
+<span class="n">rrset</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[datetime.datetime(2016, 4, 3, 2, 0),
+ datetime.datetime(2016, 10, 30, 2, 0),
+ datetime.datetime(2017, 4, 2, 2, 0),
+ datetime.datetime(2017, 10, 29, 2, 0)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="str(rrule)"><code>str(rrule)</code><a class="anchor-link" href="#str(rrule)">&#182;</a></h3><p>You can generate <code>RRULE</code> strings from <code>rrule</code> objects as well:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This string should be compatible with other applications using the iCalendar spec</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rrule</span><span class="p">(</span><span class="n">YEARLY</span><span class="p">,</span> <span class="n">byyearday</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">byhour</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">dtstart</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>DTSTART:20140913T000000
+RRULE:FREQ=YEARLY;BYYEARDAY=180;BYHOUR=1,4,12
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Note that the BYEASTER directive is the only RFC-incompatible output</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rrule</span><span class="p">(</span><span class="n">YEARLY</span><span class="p">,</span> <span class="n">byeaster</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">count</span><span class="o">=</span><span class="mi">14</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>DTSTART:19900101T000000
+RRULE:FREQ=YEARLY;COUNT=14;BYEASTER=0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div></section></section>
 </div>
 <div class="footer">
-<span id="website">https://ganssle.io</span>
-<span id="twitter">@pganssle</span>
 <span id="logo"><img src='images/zero-gray.svg'></span>
+<span id="twitter">@pganssle</span>
+<span id="website">https://ganssle.io</span>
 </div>
 <div class="footer">
 </div>
